@@ -1,2 +1,7 @@
 # other-projects
-Other-projects: PHP, Python ...
+PHP, Python ...
+
+## Note:
+- Only for localhost.
+- Developed and tested on Linux
+- Not intended for public use
