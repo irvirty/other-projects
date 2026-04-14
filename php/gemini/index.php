@@ -3,15 +3,12 @@
 
 $d = "../../../../";
 
-$q = 'Hello, What is AI?';
-$text = '';
+$q = "";
 
 if(isset($_GET['q'])&&!empty($_GET['q'])){ $q = $_GET['q']; }
 if(isset($_POST['q'])&&!empty($_GET['q'])){ $q = $_POST['q']; }
-if(isset($_GET['text'])&&!empty($_GET['q'])){ $q .= ' '.$_GET['text']; $text = $_GET['text']; }
-if(isset($_POST['text'])&&!empty($_GET['q'])){ $q .= ' '.$_POST['text']; $text = $_POST['text']; }
 
-$q = strip_tags($q);
+$qPrint = htmlspecialchars($q);
 
 include_once $d.'includes/top.php';
 
@@ -39,7 +36,7 @@ echo <<<EOF
 <div class="light shadow padding2 borderRadius">
 <span class="op">prompt:</span>
 
-$q
+$qPrint
 <hr>
 <div class="op padding2List">answer:</div>
 
@@ -63,12 +60,9 @@ echo <<<EOF
 
 <form method="GET" action="index.php" autocomplete="off">
 
-<label class="xSmall op" for="input2">q:</label>
-<input id="input2" class="padding2 border-radius" type="search"  name="q" placeholder="" autocomplete="off" value="$q">
-
 <div class="block padding-bottom2"></div>
-<label class="xSmall op block" for="text">text:</label>
-<textarea id="text" class="padding2 border-radius" name="text" rows="4" cols="50">$text</textarea> 
+<label class="xSmall op block" for="q">text:</label>
+<textarea id="q" class="padding2 border-radius" name="q" rows="4" cols="50">$q</textarea>
 
 <input class="xSmall submit" type="submit">
 

@@ -3,11 +3,14 @@
 
 $d = "../../../../";
 
-$q = 'Hello, What is AI?';
+//$q = 'Hello, What is AI?';
 
 if (isset($_GET['q'])&&!empty($_GET['q'])){ $q = $_GET['q']; }
 if (isset($_POST['q'])&&!empty($_GET['q'])){ $q = $_POST['q']; }
 
+if (!empty($q)){
+
+$qGo = rawurlencode($q);
 
 // start
 /*curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent" \
@@ -49,7 +52,7 @@ $data = [
         [
             'parts' => [
                 [
-                    'text' => $q
+                    'text' => $qGo
                 ]
             ]
         ]
@@ -81,10 +84,13 @@ if (curl_errno($ch)) {
     // Decode the JSON response
     $responseData = json_decode($response, true);
     // Print the response (or process it as needed)
-    print_r($responseData);
+//print_r($responseData);
+echo htmlspecialchars($responseData["candidates"][0]["content"]["parts"][0]["text"]);
 }
 
 // Close cURL session
 curl_close($ch);
+
+}
 
 ?>
