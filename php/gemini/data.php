@@ -9,7 +9,22 @@ if (isset($_GET['q'])&&!empty($_GET['q'])){ $q = $_GET['q']; }
 if (isset($_POST['q'])&&!empty($_GET['q'])){ $q = $_POST['q']; }
 
 
-
+// start
+/*curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent" \
+  -H 'Content-Type: application/json' \
+  -H 'X-goog-api-key: key' \
+  -X POST \
+  -d '{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Explain how AI works in a few words"
+          }
+        ]
+      }
+    ]
+  }'*/
 
 include_once $d.'config2.php';
 
@@ -25,7 +40,8 @@ $ch = curl_init();
 $apiKey = $conf["confGeminiApiKey"]; // ⚠️ **Important:** Replace with your actual API key
 
 // The API endpoint
-$url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' . $apiKey;
+//$url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' . $apiKey;
+$url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=' . $apiKey;
 
 // The data to send in the request
 $data = [
