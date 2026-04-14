@@ -10,8 +10,6 @@ if (isset($_POST['q'])&&!empty($_GET['q'])){ $q = $_POST['q']; }
 
 if (!empty($q)){
 
-$qGo = rawurlencode($q);
-
 // start
 /*curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent" \
   -H 'Content-Type: application/json' \
@@ -52,7 +50,7 @@ $data = [
         [
             'parts' => [
                 [
-                    'text' => $qGo
+                    'text' => $q
                 ]
             ]
         ]
