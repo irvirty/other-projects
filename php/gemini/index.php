@@ -61,7 +61,7 @@ echo <<<EOF
 
 <div id="form">
 
-<form method="POST" action="index.php" autocomplete="off">
+<form method="GET" action="index.php" autocomplete="off">
 
 <label class="xSmall op" for="input2">q:</label>
 <input id="input2" class="padding2 border-radius" type="search"  name="q" placeholder="" autocomplete="off" value="$q">
