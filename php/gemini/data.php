@@ -82,8 +82,14 @@ if (curl_errno($ch)) {
     // Decode the JSON response
     $responseData = json_decode($response, true);
     // Print the response (or process it as needed)
-//print_r($responseData);
+//htmlspecialchars(print_r($responseData));
+
+if ($responseData["candidates"]){
 echo htmlspecialchars($responseData["candidates"][0]["content"]["parts"][0]["text"]);
+} else {
+htmlspecialchars(print_r($responseData));
+}
+
 }
 
 // Close cURL session
