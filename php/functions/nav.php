@@ -15,20 +15,6 @@ function nav($navArr, $navCurrentPage){
 $navMenu = "";
 
 $navCurrentPage2 = " ";
-/*if (empty($navCurrentPage)){
-$navCurrentPage2 = basename($_SERVER["SCRIPT_FILENAME"], '.php');
-if ($navCurrentPage2 == "index"){
-if (php_uname('s') == 'Windows NT'){
-$dirname = explode("\\", getcwd());
-$dirname = $dirname[count(explode('\\', getcwd()))-1];
-//$d = $_SERVER["DOCUMENT_ROOT"].'/';
-} else {
-$dirname = explode("/", getcwd());
-$dirname = $dirname[count(explode("/", getcwd()))-1];
-}
-$navCurrentPage2 = $dirname;
-}
-}*/
 
 //if (empty($navCurrentPage)){ $navCurrentPage = $navCurrentPage2; }
 foreach ($navArr as $v => $k){
