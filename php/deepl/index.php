@@ -6,11 +6,18 @@ $d = "../../../../";
 $q = "";
 
 if(isset($_GET['q'])&&!empty($_GET['q'])){ $q = $_GET['q']; }
-if(isset($_POST['q'])&&!empty($_GET['q'])){ $q = $_POST['q']; }
+if(isset($_POST['q'])&&!empty($_POST['q'])){ $q = $_POST['q']; }
+
+if (isset($_GET['from'])&&!empty($_GET['from'])){ $from = $_GET['from']; } else { $from = ""; }
+if (isset($_POST['from'])&&!empty($_POST['from'])){ $from = $_POST['from']; } else { $from = ""; }
+
+if (isset($_GET['to'])&&!empty($_GET['to'])){ $to = $_GET['to']; } else { $to = ""; }
+if (isset($_POST['to'])&&!empty($_POST['to'])){ $to = $_POST['to']; } else { $to = ""; }
 
 $qPrint = htmlspecialchars($q);
 
 include_once $d.'includes/top.php';
+
 
 echo <<<EOF
 
@@ -71,6 +78,11 @@ echo <<<EOF
 
 
 </form>
+</div>
+
+<br>
+<div class="op">
+from to: $from -> $to
 </div>
 
 
