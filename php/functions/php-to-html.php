@@ -74,7 +74,7 @@ curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Your application name');
 curl_setopt($curl_handle, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, 0);
 $page = curl_exec($curl_handle);
-curl_close($curl_handle);
+#curl_close($curl_handle); delme PHP 8 error
 
 if ($name == "rss"||$name == "rss2"){
 $myfile = fopen("$htmlSiteDirectory"."$name.xml", "w+") or die ("Unable to open file!");
