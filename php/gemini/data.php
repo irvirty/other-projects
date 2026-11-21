@@ -93,7 +93,7 @@ htmlspecialchars(print_r($responseData));
 }
 
 // Close cURL session
-curl_close($ch);
+#dellme PHP 8 curl_close($ch);
 
 }
 

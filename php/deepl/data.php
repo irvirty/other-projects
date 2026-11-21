@@ -103,7 +103,7 @@ if($errno = curl_errno($curl)) {
     echo "DeepL Error: cURL error ({$errno}):\n {$error_message}";
 }
 
-curl_close($curl);
+#dell me PHP 8 curl_close($curl);
 echo $resp;
 }
 ?>
